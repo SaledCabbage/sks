@@ -77,18 +77,3 @@ add_btn.onclick = function() {
 };
 add_btn.setAttribute('style', 'position: fixed !important;right:1%;bottom: 5%;z-index:999;');
 $("body").append(add_btn);
-
-
-/*
-//备份一下核心内容
-$.get('index.php?course-app-course-recordtxttime&courseid='+kecheng_id+'&time=60&coursetime='+setting.lefttime+'&' + Math.random(), function (data) {
-                    console.log(data);
-                    var second = parseInt(data);
-                    var minute = parseInt(second) / 60;
-                    if(minute>=600)
-                    {
-                        minute='600';
-                    }
-                    $('#sss101').text(minute);
-                }, 'text');
- */
