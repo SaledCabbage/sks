@@ -4,10 +4,21 @@
 // 人员列表
 var ver_people = ["UserName"
 ];
-var count = 0;
-for (var item of  ver_people) {
-	if ($(".has-dropdown a:first").text() === item) {
-		// 正经函数在这里
+var UserName = $(".has-dropdown a:first").text();
+
+function  verified_people(UserName){
+	for (var item of ver_people) {
+		if (UserName === item) {
+			return true;
+		}
+	}
+	return false;
+}
+
+var is_verified = verified_people(UserName);
+
+if (is_verified) {
+	// 正经函数在这里
 		console.log('插件已生效！');
 		var sj_f=0;
 		if(typeof hd!="undefined"){
@@ -16,12 +27,9 @@ for (var item of  ver_people) {
 		console.log('任务完成！');
 		}
 		else {console.log('该页面不是课程页面！');}
-		count--;
-		
-	}
-	count++;
-	if (count == ver_people.length) {
-		console.warn("好好学习，好好工作，别投机取巧。");
-	}
 }
+else{
+	console.warn("好好学习，好好工作，别投机取巧。");
+}
+
 
