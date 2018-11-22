@@ -2,6 +2,9 @@
 	课时自动添加
  */
 
+//鉴权
+if ($(".has-dropdown a:first").text() === "UserName") {
+
 //获取网页参数信息
 function getQueryVariable(variable)
 {
@@ -50,3 +53,4 @@ add_btn.onclick = function() {
 };
 add_btn.setAttribute('style', 'position: fixed !important;right:1%;bottom: 5%;z-index:999;');
 $("body").append(add_btn);
+}
