@@ -17,11 +17,20 @@ function getQueryVariable(variable)
        return(false);
 }
 
+function is_courseapp(){
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i = 0; i < vars.length; i++) {
+		if(vars[i] == "course-app-course"){return(true);}
+	}
+	return(false);
+}
+
 var kecheng_id = getQueryVariable("contentid");
 
 function kuaisujiashi(){
 
-	if (!kecheng_id) {
+	if (!kecheng_id||!is_courseapp()) {
 		alert("这不是学习页面，大哥你别逗我。好好学习！");
 		return -1;
 	}
