@@ -61,5 +61,6 @@ add_btn.onclick = function() {
 	kuaisujiashi();
 };
 add_btn.setAttribute('style', 'position: fixed !important;right:1%;bottom: 5%;z-index:999;');
+$("#fh5co-hero").remove();
 $("body").append(add_btn);
 }
