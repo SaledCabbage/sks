@@ -30,6 +30,8 @@ var kecheng_id = getQueryVariable("contentid");
 
 function kuaisujiashi(){
 
+	//var shengyu_time = setting.lefttime - minute;//计算课程剩余时间;
+
 	if (!kecheng_id||!is_courseapp()) {
 		alert("这不是学习页面，大哥你别逗我。好好学习！");
 		return -1;

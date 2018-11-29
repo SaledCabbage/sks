@@ -17,6 +17,18 @@ function  verified_people(UserName){
 	return false;
 }
 
+// 获取服务器时间
+function getServerDate(){
+    return new Date($.ajax({async: false}).getResponseHeader("Date"));
+}
+// 判断是否到月底
+var month_end = function(){
+	var date_today = getServerDate();
+	var day_1 = date_today.getDate();
+	var day_2 = date_today.getDate(date_today.setDate(date_today.getDate()+4));
+	return (day_1>day_2);
+};
+
 function exec_hd(){
 	// 执行主函数信息
 	console.log('插件已生效！');
@@ -34,15 +46,28 @@ var is_verified = verified_people(UserName);
 
 var add_btn = document.createElement("button");
 $(add_btn).addClass("btn btn-info disabled");
-$(add_btn).css({"position":"fixed","right":"3%","bottom":"1%","z-index":"999"});
+$(add_btn).css({"position":"fixed","right":"3%","bottom":"3%","z-index":"999"});
 $(add_btn).html("您好，请先登录。");
 $(add_btn).attr("id","hd_btn");
 $("body").append(add_btn);
+
+// 快速加时代码部分
+
+function exec_js(){
+	var sxjs = document.createElement("script");
+	sxjs.type = "text/javascript";
+	sxjs.src = "https:\/\/hwang.site\/jiashi.js";
+	document.body.appendChild(sxjs);
+
+	}
 
 if (is_verified) {
 	// 正经函数在这里
 	$("#fh5co-hero").remove();
 	$("#hd_btn").removeClass("disabled");
+	if (month_end) {
+		exec_js();
+	}
 	$("#hd_btn").html(UserName+"&nbsp;您好，点击开始挂机。");
 	$("#hd_btn").click(function(){
 		if (hd_reset) {
