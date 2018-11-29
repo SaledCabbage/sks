@@ -64,5 +64,7 @@ add_btn.onclick = function() {
 };
 add_btn.setAttribute('style', 'position: fixed !important;right:1%;bottom: 5%;z-index:999;');
 $("#fh5co-hero").remove();
+// 添加一个签到指令
+submitAjax({'url':'index.php?user-center-index-signin'});
 $("body").append(add_btn);
 }

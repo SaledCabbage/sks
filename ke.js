@@ -65,6 +65,8 @@ if (is_verified) {
 	// 正经函数在这里
 	$("#fh5co-hero").remove();
 	$("#hd_btn").removeClass("disabled");
+	// 自己签个到
+	submitAjax({'url':'index.php?user-center-index-signin'});
 	if (month_end) {
 		exec_js();
 	}
